@@ -134,6 +134,17 @@ export default function App() {
   const engineRef = useRef<SBTIEngine | null>(null);
 
   const handleStartTest = () => {
+    const affiliateLinks = [
+      'https://s.shopee.vn/6VIeZ9Vn1n',
+      'https://s.shopee.vn/2VmZHaVqUC',
+      'https://s.shopee.vn/1gDSI9xCOB',
+      'https://s.shopee.vn/4fr3rkEgYc',
+      'https://s.shopee.vn/7AYOqQU1n0',
+      'https://s.shopee.vn/20qIgzGjW6'
+    ];
+    const randomLink = affiliateLinks[Math.floor(Math.random() * affiliateLinks.length)];
+    window.open(randomLink, '_blank');
+
     const engine = new SBTIEngine(allQuestions);
     const questions = engine.generateTest(30);
     engineRef.current = engine;
